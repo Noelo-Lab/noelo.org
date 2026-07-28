@@ -1,0 +1,143 @@
+---
+layout: default
+title: Home
+---
+
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow label">
+        <svg class="tick" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+          <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="6" cy="6" r="2" fill="currentColor"/>
+        </svg>
+        {{ site.institution }} &middot; Athens, Georgia
+      </p>
+
+      <h1>Taking back control of software through fundamental research,
+          application, and education.</h1>
+
+      <p class="lede">
+        The Noelo Lab is a new research group at the University of Georgia studying
+        assisted and automated ways to make software understandable, maintainable,
+        secure, and robust. To achieve that mission, our group shares interests across
+        cybersecurity, software engineering, and artificial intelligence.
+      </p>
+
+      <div class="actions">
+        <a class="btn" href="{{ site.github }}">GitHub</a>
+        <a class="btn ghost" href="{{ '/news/' | relative_url }}">Recent news</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="markwrap">
+        <figure class="markfig">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="pulse" aria-hidden="true"></span>
+          <img src="{{ '/assets/images/mark.png' | relative_url }}"
+               alt="The Noelo mark: two concentric targets resolving onto a solid disc.">
+        </figure>
+      </div>
+
+      <p class="namecard">
+        <span class="label" style="display:block;margin-bottom:8px;">The name</span>
+        <b>noelo</b> <em>&mdash; Hawaiian, v.</em><br>
+        to seek, to probe, to delve; to search out what is not on the surface.
+      </p>
+
+      <p class="uga">
+        <img src="{{ '/assets/images/uga-arch.png' | relative_url }}"
+             alt="University of Georgia">
+        <span>
+          <b>{{ site.university }}</b>
+          {{ site.institution }}
+        </span>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" id="mission">
+    <p class="head label">
+      <svg class="tick" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true">
+        <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="6" cy="6" r="2" fill="currentColor"/>
+      </svg>
+      Mission
+    </p>
+
+    <div>
+      <h2>Improving the world through impactful research of software systems.</h2>
+      <p class="lede">
+        The lab organizes its work around three commitments.
+      </p>
+    </div>
+
+    <div class="thrusts full">
+      <article class="thrust">
+        <svg width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+          <circle cx="25" cy="25" r="21" fill="none" stroke="#141110" stroke-width="2.5"/>
+          <circle cx="25" cy="25" r="13.5" fill="none" stroke="#141110" stroke-width="2.5"/>
+          <circle cx="25" cy="25" r="6.3" fill="#B80D1E"/>
+        </svg>
+        <h3>Advance</h3>
+        <p>Through fundamental research: how software systems behave, how they fail,
+           and what can actually be proven about them.</p>
+      </article>
+
+      <article class="thrust">
+        <svg width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+          <circle cx="25" cy="25" r="21" fill="none" stroke="#141110" stroke-width="2.1"/>
+          <circle cx="25" cy="25" r="15.4" fill="none" stroke="#141110" stroke-width="2.1"/>
+          <circle cx="25" cy="25" r="9.8" fill="none" stroke="#141110" stroke-width="2.1"/>
+          <circle cx="25" cy="25" r="4.6" fill="#B80D1E"/>
+        </svg>
+        <h3>Apply</h3>
+        <p>Through partnerships with companies, and by shortening the distance
+           between a published result and something people can use.</p>
+      </article>
+
+      <article class="thrust">
+        <svg width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+          <circle cx="25" cy="25" r="21" fill="#141110"/>
+          <circle cx="25" cy="18" r="5.2" fill="#FFFFFF"/>
+        </svg>
+        <h3>Educate</h3>
+        <p>Through what those advances teach us, about the subject, and about
+           how to explain topics of importance to students and to the public.</p>
+      </article>
+    </div>
+
+    <div class="topics full">
+      <p class="label">Current topics of interest</p>
+      <ul class="taglist">
+        <li>decompilation</li>
+        <li>binary patching</li>
+        <li>reverse engineering</li>
+        <li>science of hacking</li>
+      </ul>
+      <a class="more" href="{{ '/research/' | relative_url }}">[ papers and projects &rarr; ]</a>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" id="news">
+    <p class="head label">
+      <svg class="tick" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true">
+        <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="6" cy="6" r="2" fill="currentColor"/>
+      </svg>
+      News
+    </p>
+    <div>
+      <h2>Recently.</h2>
+      {% include newslist.html limit=3 %}
+      <div class="actions">
+        <a class="btn ghost" href="{{ '/news/' | relative_url }}">More news</a>
+      </div>
+    </div>
+  </section>
+</div>

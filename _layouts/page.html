@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="wrap">
+  <header class="pagehead">
+    <p class="eyebrow label">
+      <svg class="tick" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+        <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="6" cy="6" r="2" fill="currentColor"/>
+      </svg>
+      {{ page.kicker | default: page.title }}
+    </p>
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.lede %}
+    <p class="lede">{{ page.lede }}</p>
+    {%- endif %}
+  </header>
+
+  <div class="pagebody">
+    {{ content }}
+  </div>
+</div>

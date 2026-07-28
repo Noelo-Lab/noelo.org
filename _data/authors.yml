@@ -1,0 +1,12 @@
+# Blog authors.
+#
+# The key is what you put in a post's front matter: `author: mahaloz`.
+# Every field except `name` is optional. Drop a square image in
+# assets/images/authors/ and point `avatar` at it to replace the ring
+# placeholder.
+
+mahaloz:
+  name: "Zion Leonahenahe Basque"
+  role: "Assistant Professor"
+  url: "https://zionbasque.com"
+  # avatar: "/assets/images/authors/mahaloz.jpg"

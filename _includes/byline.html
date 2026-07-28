@@ -1,0 +1,24 @@
+{%- comment -%}
+  Author byline. Usage:  {% include byline.html author=page.author date=page.date %}
+  Looks the author up in _data/authors.yml; falls back to the raw string.
+{%- endcomment -%}
+{%- assign a = site.data.authors[include.author] -%}
+<div class="byline">
+  <span class="avatar">
+    {%- if a.avatar -%}
+      <img src="{{ a.avatar | relative_url }}" alt="">
+    {%- else -%}
+      <svg width="22" height="22" viewBox="0 0 50 50" aria-hidden="true">
+        <circle cx="25" cy="25" r="21" fill="none" stroke="#CEC5C2" stroke-width="3.4"/>
+        <circle cx="25" cy="25" r="9" fill="#B80D1E"/>
+      </svg>
+    {%- endif -%}
+  </span>
+  <span class="byline-txt">
+    <b>{% if a.url %}<a href="{{ a.url }}">{{ a.name }}</a>{% else %}{{ a.name | default: include.author }}{% endif %}</b>
+    <span>
+      {%- if a.role %}{{ a.role }} &middot; {% endif -%}
+      <time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date: "%B %-d, %Y" }}</time>
+    </span>
+  </span>
+</div>

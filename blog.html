@@ -1,0 +1,29 @@
+---
+layout: page
+title: Blog
+kicker: Blog
+heading: Notes from the lab.
+permalink: /blog/
+---
+
+{%- if site.posts.size > 0 %}
+<ul class="posts">
+  {%- for post in site.posts %}
+  {%- assign a = site.data.authors[post.author] %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <span class="meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        {%- if post.author %}<span>{{ a.name | default: post.author }}</span>{% endif -%}
+      </span>
+      <h2>{{ post.title }}</h2>
+      {%- if post.description %}
+      <p class="excerpt">{{ post.description }}</p>
+      {%- endif %}
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{%- else %}
+<p class="lede">Nothing here yet.</p>
+{%- endif %}

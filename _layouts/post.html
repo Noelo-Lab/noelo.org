@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<div class="wrap">
+  <header class="pagehead">
+    <p class="eyebrow label">
+      <svg class="tick" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+        <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="6" cy="6" r="2" fill="currentColor"/>
+      </svg>
+      <a href="{{ '/blog/' | relative_url }}" style="text-decoration:none;color:inherit;">Blog</a>
+    </p>
+    <h1>{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="lede">{{ page.description }}</p>
+    {%- endif %}
+    {% include byline.html author=page.author date=page.date %}
+  </header>
+
+  <article class="prose">
+    {{ content }}
+  </article>
+
+  <nav class="postnav">
+    <a href="{{ '/blog/' | relative_url }}">&larr; all posts</a>
+    {%- if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% endif -%}
+  </nav>
+</div>

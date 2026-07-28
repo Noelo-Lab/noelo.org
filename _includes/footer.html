@@ -1,0 +1,36 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img src="{{ '/assets/images/wordmark-rev.png' | relative_url }}" alt="{{ site.title }}">
+        <p>
+          {{ site.institution }}<br>
+          {{ site.university }}<br>
+          {{ site.city }}
+        </p>
+      </div>
+      <div>
+        <p class="fhead">Site</p>
+        <nav class="flist" aria-label="Footer">
+          {%- for item in site.nav_pages -%}
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {%- endfor -%}
+        </nav>
+      </div>
+      <div>
+        <p class="fhead">Elsewhere</p>
+        <div class="flist">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <a href="{{ site.github }}">github</a>
+          <a href="{{ site.scholar }}">scholar</a>
+          <a href="{{ '/news/feed.xml' | relative_url }}">news rss</a>
+          <a href="{{ '/feed.xml' | relative_url }}">blog rss</a>
+        </div>
+      </div>
+    </div>
+    <p class="colophon">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ site.title }} &middot; {{ site.university }}</span>
+      <span><b>noelo</b> &mdash; Hawaiian: to seek, to probe, to delve</span>
+    </p>
+  </div>
+</footer>

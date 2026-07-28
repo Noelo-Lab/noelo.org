@@ -1,0 +1,16 @@
+{%- comment -%}
+  Renders lab news from _data/news.yml, newest first.
+  {% include newslist.html limit=3 %} caps the number of entries.
+{%- endcomment -%}
+{%- assign items = site.data.news | sort: "date" | reverse -%}
+<ul class="news">
+  {%- for n in items limit: include.limit -%}
+  <li id="{{ n.date | date: '%Y-%m-%d' }}">
+    <time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: "%Y-%m-%d" }}</time>
+    <p>
+      {{ n.text }}
+      {%- if n.link %} <a href="{{ n.link | relative_url }}">{{ n.link_text | default: "more" }}</a>{% endif -%}
+    </p>
+  </li>
+  {%- endfor -%}
+</ul>

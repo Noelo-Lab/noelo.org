@@ -1,0 +1,13 @@
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/wordmark.png' | relative_url }}" alt="{{ site.title }}">
+      <span class="at">at the University&nbsp;of&nbsp;Georgia</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      {%- for item in site.nav_pages -%}
+      <a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} class="here" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>

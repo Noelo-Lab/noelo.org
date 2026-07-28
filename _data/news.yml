@@ -1,0 +1,18 @@
+# Lab news and updates.
+#
+# Newest first is not required — the site sorts by date. Add an entry by
+# copying the block below. `link` and `link_text` are optional; when both are
+# present the link text is appended to the end of the sentence.
+#
+#   - date: 2026-09-01
+#     text: "Something happened."
+#     link: "/research/"
+#     link_text: "read more"
+
+- date: 2026-08-01
+  text: "Noelo starts in the School of Computing at the University of Georgia."
+
+- date: 2026-07-15
+  text: "The lab is recruiting Ph.D. and Masters students to start in the Spring and Fall of 2027."
+  link: "/join/"
+  link_text: "how to apply."

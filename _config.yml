@@ -1,0 +1,54 @@
+title: "Noelo"
+tagline: "at the University of Georgia"
+description: >-
+  Noelo is a research lab at the University of Georgia studying what software
+  really does once it has been compiled: how to read it, how to rewrite it, and
+  how to make it survive contact with an adversary.
+url: "https://noelo.org"
+baseurl: ""
+
+# Shown in the site header, in order.
+nav_pages:
+  - title: "/research"
+    url: "/research/"
+  - title: "/people"
+    url: "/people/"
+  - title: "/news"
+    url: "/news/"
+  - title: "/blog"
+    url: "/blog/"
+  - title: "/join"
+    url: "/join/"
+
+email: "contact@noelo.org"
+github: "https://github.com/noelo-lab"
+scholar: "#"
+
+institution: "School of Computing"
+university: "University of Georgia"
+city: "Athens, Georgia 30602"
+
+favicon: "/assets/images/favicon.png"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /blog/:title/
+paginate: false
+timezone: America/New_York
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+feed:
+  path: /feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - serve.sh
+  - vendor
