@@ -3,8 +3,13 @@
   {% include newslist.html limit=3 %} caps the number of entries.
 {%- endcomment -%}
 {%- assign items = site.data.news | sort: "date" | reverse -%}
+{%- comment -%}
+  Liquid reads a nil `limit:` as 0, which would render an empty list on /news
+  where no limit is passed. Fall back to the full count.
+{%- endcomment -%}
+{%- assign shown = include.limit | default: items.size -%}
 <ul class="news">
-  {%- for n in items limit: include.limit -%}
+  {%- for n in items limit: shown -%}
   <li id="{{ n.date | date: '%Y-%m-%d' }}">
     <time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: "%Y-%m-%d" }}</time>
     <p>

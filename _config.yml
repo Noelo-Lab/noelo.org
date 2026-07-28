@@ -36,7 +36,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 permalink: /blog/:title/
-paginate: false
 timezone: America/New_York
 
 plugins:
