@@ -288,7 +288,7 @@ p{margin:0;}
 .byline-txt span{font-size:.75rem;color:var(--muted);}
 
 /* long-form post body */
-.prose{max-width:68ch;padding-top:clamp(18px,2.4vw,28px);}
+.prose{max-width:100ch;padding-top:clamp(18px,2.4vw,28px);}
 .prose > * + *{margin-top:18px;}
 .prose h2{font-size:1.5rem;font-weight:500;letter-spacing:-.015em;
   line-height:1.2;margin-top:clamp(38px,4.5vw,54px);}
