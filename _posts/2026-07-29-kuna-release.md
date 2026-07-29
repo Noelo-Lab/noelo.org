@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kuna: Decompiler Development in the Age of Coding Agents"
-date: 2026-07-28
+date: 2026-07-29
 author: mahaloz
 description: >-
     Background, motivation, and thoughts around the release of Kuna, a new agent-first decompiler designed for autonomous refinement.
