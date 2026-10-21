@@ -1,0 +1,51 @@
+---
+permalink: /feed.xml
+layout: null
+sitemap: false
+---
+{%- assign posts = site.posts | where_exp: "post", "post.draft != true" -%}
+{%- assign entries = posts | concat: site.data.news -%}
+{%- comment -%}
+  News dates are YAML Dates; post dates are Times. Group by numeric timestamps
+  so both types can be sorted together, including entries on the same date.
+{%- endcomment -%}
+{%- assign groups = entries | group_by_exp: "entry", "entry.date | date: '%s' | plus: 0" | sort: "name" | reverse -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>News and blog posts from the {{ site.title | xml_escape }} lab at the {{ site.university | xml_escape }}.</subtitle>
+  <link href="{{ '/feed.xml' | absolute_url | xml_escape }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/' | absolute_url | xml_escape }}" rel="alternate" type="text/html"/>
+  <id>{{ '/feed.xml' | absolute_url | xml_escape }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author><name>{{ site.title | xml_escape }}</name></author>
+  {%- for group in groups %}
+  {%- for item in group.items %}
+  <entry>
+    {%- if item.url %}
+    {%- assign author = site.data.authors[item.author] %}
+    <title type="html">{{ item.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
+    <link href="{{ item.url | absolute_url | xml_escape }}" rel="alternate" type="text/html"/>
+    <id>{{ item.id | absolute_url | xml_escape }}</id>
+    <updated>{{ item.last_modified_at | default: item.date | date_to_xmlschema }}</updated>
+    <published>{{ item.date | date_to_xmlschema }}</published>
+    <author><name>{{ author.name | default: item.author | default: site.title | xml_escape }}</name></author>
+    <content type="html" xml:base="{{ item.url | absolute_url | xml_escape }}">{{ item.content | strip | xml_escape }}</content>
+    <summary type="html">{{ item.description | default: item.excerpt | strip_html | normalize_whitespace | xml_escape }}</summary>
+    {%- else %}
+    {%- assign slug = item.date | date: "%Y-%m-%d" %}
+    <title>{{ item.text | strip_html | truncate: 120 | xml_escape }}</title>
+    <link href="{{ '/news/' | absolute_url | xml_escape }}#{{ slug }}" rel="alternate" type="text/html"/>
+    <id>{{ '/news/' | absolute_url | xml_escape }}#{{ slug }}</id>
+    <updated>{{ item.date | date_to_xmlschema }}</updated>
+    <published>{{ item.date | date_to_xmlschema }}</published>
+    {%- capture content -%}
+      {{ item.text }}
+      {%- if item.link %} <a href="{{ item.link | absolute_url | xml_escape }}">{{ item.link_text | default: "more" | xml_escape }}</a>{% endif -%}
+    {%- endcapture %}
+    <content type="html" xml:base="{{ '/' | absolute_url | xml_escape }}">{{ content | xml_escape }}</content>
+    {%- endif %}
+  </entry>
+  {%- endfor %}
+  {%- endfor %}
+</feed>

@@ -68,9 +68,9 @@ Append to `_data/news.yml` — order does not matter, the site sorts by date:
   link_text: "read more"    # optional
 ```
 
-That one entry feeds three places: the top three on the home page, the full
-`/news/` page, and the Atom feed at `/news/feed.xml`. Blog posts have their own
-feed at `/feed.xml`.
+That one entry appears in the top three on the home page, the full `/news/`
+page, and the Atom feeds. Subscribe to `/feed.xml` for both news and blog posts,
+newest first. The news-only feed remains available at `/news/feed.xml`.
 
 ## Brand
 
