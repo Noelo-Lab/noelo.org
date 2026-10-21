@@ -74,6 +74,9 @@ newest first. The news-only feed remains available at `/news/feed.xml`.
 
 ## Brand
 
+- Social previews use `assets/images/social-card.png`, a 1200×630 card with the
+  lab wordmark on white. `_config.yml` sets it as the default for every page and
+  blog post; set `image:` in a page or post's front matter to override it.
 - Red `#B80D1E`, sampled from the mark. Ink `#141110`. Warm neutrals throughout.
 - Display type: [Jost](https://github.com/indestructible-type/Jost) (OFL), chosen
   to match the geometry of the wordmark.

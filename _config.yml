@@ -30,6 +30,17 @@ city: "Athens, Georgia 30602"
 
 favicon: "/assets/images/favicon.png"
 
+# Shared social preview; individual pages and posts can override `image`.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: "/assets/images/social-card.png"
+        width: 1200
+        height: 630
+        alt: "Noelo lab logo"
+
 # Build settings
 markdown: kramdown
 kramdown:
